@@ -1,7 +1,7 @@
 // Contains a constuctor, Letter.
 var Letter = function (letter) {
   this.letter = letter;
-  this.guessed = false;
+  this.guessed = letter === " " ? true : false;
   this.reveal = function () {
     if (this.guessed) {
       return this.letter;
@@ -19,5 +19,3 @@ var Letter = function (letter) {
 };
 
 module.exports = Letter;
-
-var newLetter = new Letter("c");
