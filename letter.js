@@ -12,7 +12,9 @@ var Letter = function (letter) {
   this.check = function (guess) {
     if (guess.toLowerCase() == this.letter.toLowerCase()) {
       this.guessed = true;
+      return true;
     }
+    return false;
   };
 };
 

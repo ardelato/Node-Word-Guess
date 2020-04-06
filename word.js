@@ -8,14 +8,22 @@ var Word = function (word) {
   this.print = function () {
     var word = "";
     this.wordArray.forEach((letter) => {
-      word += letter.reveal() + " ";
+      if (letter.letter != " ") {
+        word += letter.reveal() + " ";
+      } else {
+        word += "  ";
+      }
     });
     console.log(word);
   };
   this.check = function (character) {
+    var found = false;
     this.wordArray.forEach((letter) => {
-      letter.check(character);
+      if(letter.check(character)){
+          found = true;
+      }
     });
+    return found;
   };
 };
 
